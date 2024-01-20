@@ -14,3 +14,9 @@ This project requires the following hardware:
 
 
 ## Software Requirements
+
+- **Debian 11 Bullseye**: I'm going to get it working on the Bookworm OS once the Pi 5 support is there.  I used the 64-bit version of the Debian 11 Bullseye OS.  You install this with the Pi Imager like usual.  Here's an instructional link: https://www.raspberrypi.com/software/operating-systems/.
+
+
+## Software Installation
+> :bulb: **Tip:** I did most of the installation, configuration, and testing with the Raspberry Pi connected to keyboard, mouse, and monitor.  You'll run out of USB ports when you want to add the eyes, so you could just comment those parts out in the main.py file until you're ready to run it headless. 
