@@ -29,6 +29,11 @@ This project requires the following hardware:
 ## Software Installation
 > :bulb: **Tip:** I did most of the installation, configuration, and testing with the Raspberry Pi connected to keyboard, mouse, and monitor.  You'll run out of USB ports when you want to add the eyes, so you could just comment those parts out in the main.py file until you're ready to run it headless. 
 
+It's good to start by just updating Debian.
+```
+sudo apt-get update && sudo apt-get upgrade
+```
+
 I found this guide to [Python Virtual Environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) helpful.
 
 1. Start by creating a folder structure. Open a terminal and run the following command to create the directory path `/environments/florence` (replace florence with whatever you want to call your project):
@@ -114,4 +119,36 @@ This [article](https://www.baeldung.com/linux/systemd-create-user-services) was 
 2. Now, with the sudo privilege let’s copy the unit file to the /etc/systemd/user directory.
     ```
     cp florence.service /etc/system/user
+    ```
+
+## Various Troubleshooting
+
+1. My sound device order would change on reboot
+    > I had to add/edit aliases.conf at /lib/modprobe.d/aliases.conf as follows
+    ```
+    # These are the standard aliases and dependencies.
+    # This file does not need to be modified.
+
+    options snd-usb-audio index=0
+    options snd slots=snd-usb-audio
+
+    # prevent unusual drivers from appearing as the first sound device ###########
+    options snd-pcsp index=-2
+    #options snd-usb-audio index=-2
+    options cx88_alsa index=-2
+    options snd-atiixp-modem index=-2
+    options snd-intel8x0m index=-2
+    options snd-via82xx-modem index=-2
+
+    # work around other kernel issues ############################################
+    # The EHCI driver should be loaded before the ones for low speed controllers
+    # or some devices may be confused when they are disconnected and reconnected.
+    softdep uhci-hcd pre: ehci-hcd
+    softdep ohci-hcd pre: ehci-hcd
+    ```
+
+2. Disable the audio jack on Raspberry Pi
+    > I disabled the audio jack as part of the above too by add/editing /etc/modprobe.d/raspi-blacklist.conf
+    ```
+    blacklist snd_bcm2835
     ```

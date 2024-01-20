@@ -1,0 +1,12 @@
+pyserial
+numpy
+picovoice
+pvrecorder
+pvporcupine
+pvleopard
+pvrhino
+schedule
+openai
+pathlib
+pyaudio
+mpg123-python

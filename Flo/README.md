@@ -1,6 +1,10 @@
+> :warning: **This project is still under testing**: The installation instructions are yet to be verified on a fresh install. Please proceed with caution.
+
 # Notes regarding Florence
+The goals for this project were simple.  I wanted to learn more about how to use AI API calls and Python in my personal life to double down on what I was doing professionally.  I wanted to see if I could make a static droid more dynamic by giving it a voice.  I expanded that a bit with the eyes as I wanted to learn how to incorporate LCDs rather than my traditional approaching using LEDs or Adafruit's Neopixels.
+
+The readme files in the Arduino directory and the Raspberry Pi directory contains the instructions for each piece of hardware.  The documentation will continue once I have a fresh Raspberry Pi to try it all out again with.
 
 
 
-#Custom painting functions
-I added the wipe and unwipe functions to the GUI_Paint.cpp file and then made sure the signatures of the new functions were also added to GUI_Paint.h.  Both functions were written by AI.  I had to go back and forth with it a bit explaining what worked and what didn't work until it got to a place I was reasonably happy.  I never defined the LCD driver type to it.  It would have done better if I had.  This was deliberately quick and dirty.  I just copied in at one point the contents of the GUI_Paint.cpp so it could see the methods available to it. 
+
