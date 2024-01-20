@@ -42,8 +42,8 @@ AUDIO = None
 RECORDER = None
 
 # Initialize serial connections to two Arduinos.  In the FLO code, they both do the same things and the nano code is identical.
-arduino1 = serial.Serial('/dev/ttyUSB0', 57600, timeout=1)
-arduino2 = serial.Serial('/dev/ttyUSB1', 57600, timeout=1)
+arduino1 = serial.Serial('/dev/ttyUSB0', 57600, timeout=1)  
+arduino2 = serial.Serial('/dev/ttyUSB1', 57600, timeout=1) 
 
 # Define error handler function. This function is currently empty and just suppresses unnecessary ALSA errors.
 def py_error_handler(filename, line, function, err, fmt):
@@ -253,10 +253,11 @@ def send_command_to_both_arduinos(command):
     threading.Timer(10, send_command_to_both_arduinos, args=('blink',)).start()
 
 def main():
-    arduino1.reset_input_buffer()
-    arduino2.reset_input_buffer()
+    arduino1.reset_input_buffer() # comment out this line if you don't have an Arduino connected
+    arduino2.reset_input_buffer() # comment out this line if you don't have an Arduino connected
 
-    send_command_to_both_arduinos('blink')
+    send_command_to_both_arduinos('blink') # comment out this line if you don't have an Arduino connected
+    
     set_config()
 
     logging.basicConfig(level=logging.DEBUG)

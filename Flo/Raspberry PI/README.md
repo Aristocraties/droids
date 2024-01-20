@@ -67,7 +67,38 @@ I found this guide to [Python Virtual Environments](https://packaging.python.org
    pip install -r requirements.txt
    ```
 
-7. Remember to deactivate the virtual environment when you're done by running deactivate.
+    > :bulb: **Note:** Remember to deactivate the virtual environment when you're done by running deactivate.  This won't be necessary once we have it running as a service.
+        ```
+        deactivate
+        ```
+7.  Add your API keys to either a .env file (forthcoming) or edit main.py to add them.  Also add the path to your PicoVoice model files.
     ```
-    deactivate
+    LEOPARD = pvleopard.create(
+            access_key='PICOVOICE_LEOPARD_ACCESS_KEY',
+            model_path='/path/to/your leopard file.pv'
+            )
+    global RHINO
+    RHINO = pvrhino.create(
+            access_key='PICOVOICE_RHINO_ACCESS_KEY',
+            context_path='/path/to/your rhino file.rhn'
+            )
+    global PORCUPINE
+    PORCUPINE = pvporcupine.create(
+            access_key='PICOVOICE_PORCUPINE_ACCESS_KEY',
+            keyword_paths=['/path/to/your porcupine file.ppn']
+            )
+
+    with noalsaerr():
+        global AUDIO
+        AUDIO = pyaudio.PyAudio()
+
+    print('testing')
+    global CLIENT
+    #recommend using a .env file to store your OpenAI API key
+    CLIENT = OpenAI(api_key='OPENAI_API_KEY')
+    ```
+
+8. If you have commented out the arduino functions and activated your virtual environment, you should be able to run the main.py function to test it out.
+    ```
+    python main.py
     ```
