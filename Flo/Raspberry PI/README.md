@@ -15,7 +15,11 @@ This project requires the following hardware:
 
 ## Software Requirements
 
-- **Debian 11 Bullseye**: I'm going to get it working on the Bookworm OS once the Pi 5 support is there.  I used the 64-bit version of the Debian 11 Bullseye OS.  You install this with the Pi Imager like usual.  Here's an instructional link: https://www.raspberrypi.com/software/operating-systems/.
+- **Debian 11 Bullseye**: I'm going to get it working on the Bookworm OS once the Pi 5 support exists for PicoVoice.  I used the 64-bit version of the Debian 11 Bullseye OS.  You install this with the Pi Imager like usual.  Here's an instructional link: https://www.raspberrypi.com/software/operating-systems/.
+
+- **PicoVoice**: You'll need to create an account for [PicoVoice](https://console.picovoice.ai/login) so you can get the model files you need and the access keys.  They have a development license that is pretty generous.  At last look, it allowed for 25 hours of free Rhino and Leopard usage each month.  Given how expensive it is to go from developer to actual customer, hopefully this suffices for most needs.  Another option for higher usage levels is to just use PicoVoice for the wake word and usage Open AI for speech to text.  You can implement intent recognition using Open AI's function calling.  I'll likely create a version with that too.  The downside of this approach is latency.  Each step requires a call through the internet.  Ideally, OpenAI would create an API endpoint that allowed one to pass audio in directly, transcribe, and return audio directly.  That doesn't exist yet.
+
+- **Open AI API**: 
 
 
 ## Software Installation
