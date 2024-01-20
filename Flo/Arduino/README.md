@@ -7,7 +7,7 @@ This project involves connecting a Waveshare 1.28 round LCD to Arduino Nanos via
 ## Hardware Requirements
 
 - Arduino Nanos: These are available from a variety of sources, including Amazon. It's recommended to use name brand real ones to avoid programming issues often associated with knock-offs.
-- Waveshare 1.28 round LCDs: These can be found and purchased on [Waveshare's website](https://www.waveshare.com/1.28inch-lcd-module.htm) or on Amazon.
+- Waveshare 1.28 round LCDs: These can be found and purchased on [Waveshare's website](https://www.waveshare.com/1.28inch-lcd-module.htm) or on Amazon.  Waveshare's documentation [wiki] (https://www.waveshare.com/wiki/1.28inch_LCD_Module#Documents).
 
 ## Connection Guide
 

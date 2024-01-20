@@ -1,0 +1,17 @@
+[Unit]
+Description=Florence Chatbot
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/environments/florence
+ExecStart=/environments/florence/bin/python /environments/florence/main.py start
+Restart=always
+RestartSec=15
+KillMode=process
+TimeoutSec=30
+StandardOutput=truncate:/environments/florence/logs.log
+StandardError=truncate:/environments/florence/error.log
+
+[Install]
+WantedBy=default.target

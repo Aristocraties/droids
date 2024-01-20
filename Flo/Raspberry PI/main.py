@@ -233,7 +233,6 @@ def set_config():
         global AUDIO
         AUDIO = pyaudio.PyAudio()
 
-    print('testing')
     global CLIENT
     #recommend using a .env file to store your OpenAI API key
     CLIENT = OpenAI(api_key='OPENAI_API_KEY')
@@ -257,7 +256,7 @@ def main():
     arduino2.reset_input_buffer() # comment out this line if you don't have an Arduino connected
 
     send_command_to_both_arduinos('blink') # comment out this line if you don't have an Arduino connected
-    
+
     set_config()
 
     logging.basicConfig(level=logging.DEBUG)
