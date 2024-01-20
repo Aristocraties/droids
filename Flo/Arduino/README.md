@@ -28,3 +28,11 @@ Starts on Line 47
 #define DEV_RST_PIN 7
 #define DEV_BL_PIN  6
 ```
+
+Once the LCD is wired to the nano, you can use the USB cable to connect to your computer.  
+
+> :warning: You'll ultimately use the USB cables for connecting to the Raspberry PI too (permanently), so make sure you have two if using for two eyes. 
+
+## Software Guide
+
+This installs normally through the Arduino IDE.  Just open all the code files and compile to make sure it builds, then upload.  There are plenty of tutorials on this area.
