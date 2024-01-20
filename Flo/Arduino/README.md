@@ -35,4 +35,6 @@ Once the LCD is wired to the nano, you can use the USB cable to connect to your 
 
 ## Software Guide
 
-This installs normally through the Arduino IDE.  Just open all the code files and compile to make sure it builds, then upload.  There are plenty of tutorials on this area.
+This installs normally through the Arduino IDE.  Just open all the code files and compile to make sure it builds, then upload.  There are plenty of tutorials on this area.  We can evaluate if more instruction here is needed moving forward.
+
+To add new painting functions for the LCDs, you need to add them to GUI_Paint.cpp.  You'll also need to define the method signature in the GUI_Paint.h file.  If you're using AI to write it, just provide it the contents of the GUI_Paint.cpp file.  I also found it helpful to let the AI know that these use the GC9A01A library driver. 
