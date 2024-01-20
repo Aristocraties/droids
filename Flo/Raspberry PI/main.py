@@ -13,10 +13,7 @@ import os
 import sys
 import time
 import schedule
-import spidev as SPI
 sys.path.append("..")
-from lib import LCD_1inch28
-from PIL import Image,ImageDraw,ImageFont
 from openai import OpenAI
 from pathlib import Path
 import logging
@@ -285,4 +282,5 @@ def main():
         LEOPARD.delete()
         RHINO.delete()
 
-main()
+if __name__ == "__main__":
+    main()
