@@ -28,3 +28,46 @@ This project requires the following hardware:
 
 ## Software Installation
 > :bulb: **Tip:** I did most of the installation, configuration, and testing with the Raspberry Pi connected to keyboard, mouse, and monitor.  You'll run out of USB ports when you want to add the eyes, so you could just comment those parts out in the main.py file until you're ready to run it headless. 
+
+I found this guide to [Python Virtual Environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) helpful.
+
+1. Start by creating a folder structure. Open a terminal and run the following command to create the directory path `/environments/florence` (replace florence with whatever you want to call your project):
+
+   ```bash
+   mkdir -p /environments/florence
+   ```
+
+2. Navigate to the newly created directory (change florence to whatever you called your project):
+
+   ```bash
+   cd /environments/florence
+   ```
+
+3. Create a Python 3 virtual environment named `florence` (replace florence with whatever you named your directory):
+
+   ```bash
+   python3 -m venv florence
+   ```
+
+4. Activate the virtual environment:
+
+   ```bash
+   source florence/bin/activate
+   ```
+
+    Note: The command to activate the virtual environment may vary depending on your shell. If you're using a shell other than bash, replace source with . (dot).
+
+5. Check that the virtual environment is activated successfully:
+    ```
+    deactivate
+    ```
+6. Once the virtual environment is activated, install the necessary Python packages from the `requirements.txt` file. Make sure you're in the project directory where `requirements.txt` is located:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+7. Remember to deactivate the virtual environment when you're done by running deactivate.
+    ```
+    deactivate
+    ```
