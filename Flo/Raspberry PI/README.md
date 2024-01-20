@@ -19,9 +19,11 @@ This project requires the following hardware:
 
 - **PicoVoice**: You'll need to create an account for [PicoVoice](https://console.picovoice.ai/login) so you can get the model files you need and the access keys. They have a development license that is pretty generous. At last look, it allowed for 25 hours of free Rhino and Leopard usage each month. Given how expensive it is to go from developer to actual customer, hopefully this suffices for most needs. They have a ton of documentation on their development website about how to create the model files you'll need.
 
-  > Another option for higher usage levels is to just use PicoVoice for the wake word and usage Open AI for speech to text. You can implement intent recognition using Open AI's function calling. I'll likely create a version with that too. The downside of this approach is latency. Each step requires a call through the internet. Ideally, OpenAI would create an API endpoint that allowed one to pass audio in directly, transcribe, and return audio directly. That doesn't exist yet.
+  > Another option for higher usage levels is to just use PicoVoice for the wake word and use Open AI for the rest. You can implement intent recognition using Open AI's function calling. I'll likely create a version with that too. The downside of this approach is latency. Each step requires a call through the internet. I haven't tested whether the increased latency would be greater than the processing time of onboard speech to text.  Ideally, OpenAI would create an API endpoint that allowed one to pass audio in directly, transcribe, and return audio directly. That doesn't exist yet.  
+  
+  > It's also worth noting the AI response times are slow.  That'll likely improve in the future, but is reality now.  Don't expect it to feel like a conversation with another person.  I haven't tried to incorporate a streaming response yet.  
 
-- **Open AI API**: 
+- **Open AI API**: You'll need to get a license key for [OpenAI's API](https://openai.com/blog/openai-api).  They have a wallet function you can use to add money for your usage.  I'm not sure how long it will work this way, but I added $50 to my wallet in November and they seem to give me an $18 credit that I never seem to use up.  Not sure how/why that works.  I've been using the GPT-4 model as it seems to have the best ability to follow my droid-based system prompt and incorporate creativity in the response best.  For the text-to-speech, they have six models you can choose from.  I'm using Nova for Flo, but you just change the model name in the main.py code.
 
 
 ## Software Installation
