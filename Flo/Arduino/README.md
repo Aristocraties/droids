@@ -2,7 +2,7 @@
 
 # Arduino Nano & Waveshare LCD Project
 
-This project involves connecting a Waveshare 1.28 round LCD to Arduino Nanos via SPI.
+This project involves connecting a Waveshare 1.28 round LCD to Arduino Nanos via SPI.  I originally had the eyes connected by SPI to the Raspberry Pi's GPIO pins, but found that the need to have realtime comms to the eyes plus the realtime microphone listening was too much, so I dedicated eye functions to the nanos and just use serial comms to call to them from the Raspberry Pi.
 
 ## Hardware Requirements
 
@@ -38,3 +38,6 @@ Once the LCD is wired to the nano, you can use the USB cable to connect to your 
 This installs normally through the Arduino IDE.  Just open all the code files and compile to make sure it builds, then upload.  There are plenty of tutorials on this area.  We can evaluate if more instruction here is needed moving forward.
 
 To add new painting functions for the LCDs, you need to add them to GUI_Paint.cpp.  You'll also need to define the method signature in the GUI_Paint.h file.  If you're using AI to write it, just provide it the contents of the GUI_Paint.cpp file.  I also found it helpful to let the AI know that these use the GC9A01A library driver. 
+
+
+I compared using the Adafruit_GFX and Adafruit_GC9A01A, but found the functions (e.g. fillscreen) performed significantly slower than the native waveshare library.  I'm going to continue to look for better libraries though.
